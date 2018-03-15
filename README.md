@@ -3,6 +3,23 @@ Voorbeeldcode en uitwerkingen voor OOP3 (thema 2.3)
 
 Deze repository bevat de meest interessante voorbeeldcode en uitwerkingen die gedemonstreerd zijn tijdens de lessen OOP3. De klassen zijn voorzien van uitgebreid commentaar om te verduidelijken wat er gebeurt en waarom. Per week volgt hieronder een korte omschrijving van de packages en de meest voor de hand liggende volgorde om de code te bestuderen.
 
+## week 3
+**1. package exception**<br/>
+Verschilldende voorbeelden van werken met Exception, zowel goed als fout.
+
+**2. package fileio**<br/>
+Werken met Java met bestanden en directories.
+
+**3. package json**<br/>
+Javascript Object Notation en links naar meer interessante resources hierover.
+
+**4. package generics**<br/>
+Maak je eigen generic.
+
+**5. package iterator**<br/>
+Een uitgebreidere uitwerking van de iterator-opdracht van Blackboard, waarbij gebruik gemaakt wordt van generics.
+
+
 ## week 2
 **1. package decorator**<br/>
 Een eenvoudige uitwerking van decorator met betrekking tot EAS en DES encryptie van een plain text string. Overigens zit de echte encryptie hier niet in; het gaat om de infrastructuur van hoe deze verschillende klassen met elkaar samenwerken.

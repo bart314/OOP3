@@ -1,0 +1,244 @@
+{
+"nodes": [
+  {
+    "id": 1,
+    "label": "Donald Trump",
+    "cluster": 1,
+    "notes": "POTUS",
+    "root": true,
+    "type":"potus"
+  },
+  {
+    "id": 2,
+    "label": "Katie Walsh",
+    "cluster": 1,
+    "notes": "dept. COS"
+  },
+  {
+    "id": 3,
+    "label": "Kellyanne Conway",
+    "cluster": 2,
+    "notes": "Aide"
+  },
+  {
+    "id": 4,
+    "label": "Hope Hicks",
+    "cluster": 2,
+    "notes": "Aide"
+  },
+  {
+    "id": 5,
+    "label": "Ivanka Trump",
+    "cluster": 3,
+    "notes": ""
+  },
+  {
+    "id": 6,
+    "label": "Jarred Kushner",
+    "cluster": 3,
+    "notes": "New York Democrat",
+    "type":"faction"
+  },
+  {
+    "id": 7,
+    "label": "Michael Flynn",
+    "cluster": 3,
+    "notes": "NSA from 20 jan - 13 feb 2017"
+  },
+  {
+    "id": 8,
+    "label": "Herbert McMaster",
+    "cluster": 3,
+    "notes": ""
+  },
+  {
+    "id": 9,
+    "label": "Anthony Scaramucci",
+    "cluster": 3,
+    "notes": "press secretary for 10 days"
+  },
+  {
+    "id": 10,
+    "label": "Dina Powell",
+    "cluster": 3,
+    "notes": "senior advisor on entrepreneurship"
+  },
+  {
+    "id": 11,
+    "label": "Gary Cohn",
+    "cluster": 3,
+    "notes": "national economic council"
+  },
+  {
+    "id": 12,
+    "label": "Reince Priebus",
+    "cluster": 4,
+    "notes": "COS; establishment, republican",
+    "type":"faction"
+  },
+  {
+    "id": 13,
+    "label": "Sean Spicer",
+    "cluster": 4,
+    "notes": "press secretary"
+  },
+  {
+    "id": 14,
+    "label": "Paul Ryan",
+    "cluster": 4,
+    "notes": "speaker of the house"
+  },
+  {
+    "id": 15,
+    "label": "Steve Bannon",
+    "cluster": 5,
+    "notes": "altright millitant",
+    "type":"faction"
+  },
+  {
+    "id": 16,
+    "label": "Rupert Murdoch",
+    "cluster": 5,
+    "notes": ""
+  },
+  {
+    "id": 17,
+    "label": "Jeff Sessions",
+    "cluster": 5,
+    "notes": "attorny general; russian connection"
+  },
+  {
+    "id": 18,
+    "label": "John Kelly",
+    "cluster": 5,
+    "notes": "COS as of July 2017"
+  },
+  {
+    "id": 19,
+    "label": "James Comey",
+    "cluster": 5,
+    "notes": "head of FBI"
+  },
+  {
+    "id": 20,
+    "label": "Roger Ailes",
+    "cluster": 5,
+    "notes": "head of Fox news"
+  }
+],
+"edges": [
+  {
+    "id":1,
+    "source": 1,
+    "target": 2,
+    "type": "strong"
+  },
+  {
+    "id":2,
+    "source": 1,
+    "target": 3,
+    "type": "normal"
+  },
+  {
+    "id":3,
+    "source": 1,
+    "target": 4,
+    "type": "normal"
+  },
+  {
+    "id":4,
+    "source": 2,
+    "target": 6,
+    "type": "strong"
+  },
+  {
+    "id":5,
+    "source": 2,
+    "target": 12,
+    "type": "strong"
+  },
+  {
+    "id":6,
+    "source": 2,
+    "target": 15,
+    "type": "strong"
+  },
+  {
+    "id":7,
+    "source": 6,
+    "target": 5,
+    "type": "normal"
+  },
+  {
+    "id":8,
+    "source": 6,
+    "target": 7,
+    "type": "normal"
+  },
+  {
+    "id":9,
+    "source": 6,
+    "target": 9,
+    "type": "normal"
+  },
+  {
+    "id":10,
+    "source": 6,
+    "target": 10,
+    "type": "normal"
+  },
+  {
+    "id":11,
+    "source": 6,
+    "target": 11,
+    "type": "normal"
+  },
+  {
+    "id":12,
+    "source": 7,
+    "target": 8,
+    "type": "normal"
+  },
+  {
+    "id":13,
+    "source": 12,
+    "target": 13,
+    "type": "normal"
+  },
+  {
+    "id":14,
+    "source": 12,
+    "target": 14,
+    "type": "normal"
+  },
+  {
+    "id":15,
+    "source": 15,
+    "target": 16,
+    "type": "normal"
+  },
+  {
+    "id":16,
+    "source": 15,
+    "target": 18,
+    "type": "normal"
+  },
+  {
+    "id":17,
+    "source": 15,
+    "target": 17,
+    "type": "normal"
+  },
+  {
+    "id":18,
+    "source": 15,
+    "target": 19,
+    "type": "normal"
+  },
+  {
+    "id":19,
+    "source": 15,
+    "target": 20,
+    "type": "normal"
+  }
+]}

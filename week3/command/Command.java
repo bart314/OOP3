@@ -1,7 +1,8 @@
 package command;
 
 interface Command {
-	public void execute();
+	void execute();
+	void undo();
 }
 
 
@@ -16,6 +17,10 @@ class goLeftCommand implements Command {
 	public void execute() {
 		_element.goLeft();
 	}
+
+	public void undo() {
+		_element.goBack();
+	}
 	
 }
 
@@ -28,6 +33,10 @@ class goRightCommand implements Command {
 	@Override
 	public void execute() {
 		_element.goRight();
+	}
+
+	public void undo() {
+		_element.goBack();
 	}
 	
 }

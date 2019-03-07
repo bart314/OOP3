@@ -17,5 +17,7 @@ public class Demo {
 
 		v.setCommand(right);
 		v.buttonPressed();
+
+		v.undo();
 	}
 }

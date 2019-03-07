@@ -80,18 +80,6 @@ public class Demo {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     static void demo2() {
         Olifant olifant = new Olifant();
         Integer kratSize = 8_123_432;

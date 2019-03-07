@@ -29,7 +29,7 @@ public class Demo {
         // Ik kan ook eenvoudig een nieuw type Document toevoegen: daarvoor hoef ik hier feitelijk niets te
         // veranderen, behalve (opnieuw) de juiste Factory aanroepen.
 
-		DocumentFactory factory = new JSONFactory();
+		DocumentFactory factory = new TEXFactory();
 
 		Document foo = factory.makeDocument();
 		foo = factory.makeDocument();

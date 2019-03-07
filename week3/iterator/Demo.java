@@ -25,7 +25,7 @@ public class Demo {
 
         // We gebruiken een iterator om de waarden weer te laten zien.
         Iterator<String> itr = foo.iterator();
-        while (itr.hasNext()) System.out.println(its.next());
+        while (itr.hasNext()) System.out.println(itr.next());
 
 
         // Omdat onze Stack gebruik maakt van een Generic, kunnen we ook onze zelfgemaakte

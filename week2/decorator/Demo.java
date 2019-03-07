@@ -39,13 +39,17 @@ public class Demo {
 		// Dat object dat we net hebben gemaakt, kunnen we decoreren met een AESDecorator.
         // Dat ding verwacht bij z'n constructie een Encryptable, wat de klasse ClearText
         // toevallig ook nog is.
-		EncryptionDecorator aes = new AESDecorator(demo);
-		System.out.println(aes.getData());
+//		EncryptionDecorator aes = new AESDecorator(demo);
+//		System.out.println(aes.getData());
 
 		// Dat object kunnen we op zijn beurt weer decoreren met een DESDecorator. Ook
         // dat ding verwacht bij z'n constructor een Encryptable, wat ook die andere
         // decorator is (daarom moeten al die decorators dezelfde interface implementeren).
-		EncryptionDecorator des = new DESDecorator(aes);
-		System.out.println(des.getData());	
+//		EncryptionDecorator des = new DESDecorator(demo);
+//		System.out.println(des.getData());
+//
+		EncryptionDecorator foo = new DESDecorator(new AESDecorator(demo));
+		System.out.println(foo.getData());
 	}
+
 }

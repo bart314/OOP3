@@ -1,7 +1,5 @@
 package exception;
 
-import org.omg.SendingContext.RunTime;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

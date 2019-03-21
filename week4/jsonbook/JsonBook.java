@@ -5,8 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.stream.JsonReader;
 
-import com.oracle.javafx.jmx.json.JSONReader;
-import com.sun.org.glassfish.external.statistics.Stats;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -37,10 +35,14 @@ In de klasse hieronder staan vier methoden: twee om data te lezen en twee om dat
 */
 
 public class JsonBook {
+    // Verander de onderstaande constante in het correcte pad (waar de bestanden terecht moeten komen).
+    private static final String DIR_NAME = "/Users/bart/Dropbox/Hanze/thema2.3/oop3/week4/jsonbook/";
 
     public static void main(String[] args) {
-        JsonBook.write_demo_gson();
-
+        //read_demo();
+        //write_demo();
+        //read_demo_gson();
+        write_demo_gson();
     }
 
     /*
@@ -54,7 +56,7 @@ public class JsonBook {
         // We maken eerst een parse aan, die de gegeven data voor ons parseert. Dit kan buiten het
         // try-block omdat dat in de regel wel goed zal gaan.
         JSONParser parser = new JSONParser();
-        String filename = "/Users/docent/Documents/OOP3-workspace/week4/src/jsonbook/trump.json";
+        String filename = DIR_NAME+ "trump.json";
 
         // Omdat die Parser geen AutoClosable is, kunnen we hier geen gebruik maken van een
         // try-with-resource-constructie.
@@ -100,8 +102,8 @@ public class JsonBook {
      */
     private static void write_demo() {
         // https://stackoverflow.com/a/18336207
-        // obj is het object van het hoogste niveau
-        JSONObject obj = new JSONObject();
+        // obj is de array van het hoogste niveau
+        JSONArray obj = new JSONArray();
 
         // Hieronder maken we twee nieuwe objecten aan, die we beide met een auteur en een array
         // van titels zullen vullen (in de code hieronder)
@@ -114,26 +116,32 @@ public class JsonBook {
         titels.add("De dwaas van Palmyra");
         titels.add("Het fluwelen labyrinth");
         titels.add("De ommegang");
+        foo.put("auteur","Jan van Aken");
         foo.put("titels", titels);
-        // resultaat: { "titels":["titel1", "titel2", "titel3"] }
+        // resultaat: { "titels":["titel1", "titel2", "titel3", ...] }
 
         // De array van titels van de tweede auteur:
         JSONArray titels2 = new JSONArray();
-        titels2.add("Harry Potter en de steen der wijzen");
+        titels2.add("Heren van de thee");
+        titels2.add("Sleuteloog");
+        titels2.add("Oeroeg");
+        titels2.add("De verborgen bron");
+        bar.put("auteur","Hella Haasse");
         bar.put("titels", titels2);
         // De vorm van dit resultaat is van dezelfde vorm als in de foo.put hierboven.
 
         // Nu voegen we de beide objecten foo en bar toe aan het object van op het hoogste niveau,
         // voorzien van de naam van de auteur als key (en de lijst van titels dus als value)
-        obj.put("Jan van Aken", foo);
-        obj.put("J.K.Rowling", bar);
+        obj.add(foo);
+        obj.add(bar);
 
         // en wegschrijven. Let op de try-with-resource-constructie hieronder.
-        String filename = "/Users/docent/Documents/OOP3-workspace/week4/src/jsonbook/titels.json";
+        String filename = DIR_NAME + "titels.json";
         try (FileWriter writer = new FileWriter(filename)) {
             writer.write(obj.toJSONString());
         } catch (IOException e) {
             System.out.println("Falen met schrijven");
+            e.printStackTrace();
         }
     }
 
@@ -153,9 +161,9 @@ public class JsonBook {
      */
 
     private static void read_demo_gson() {
-        String filenname = "/Users/docent/Documents/OOP3-workspace/week4/src/jsonbook/remarque.json";
+        String filenname = DIR_NAME + "remarque.json";
 
-        // JsonReader is een AutoClosable, dus we kunnen gebruik maken van een try-with-resource-
+        // JsonReader is een AutoClosable, dus we kunnen fijn gebruik maken van een try-with-resource-
         // constructie.
         try (JsonReader reader = new JsonReader(new FileReader(filenname));) {
             // https://google.github.io/gson/apidocs/
@@ -172,7 +180,7 @@ public class JsonBook {
             // en halen de array van titels van Remarque op als List<String>. Merk op dat we in dit
             // geval geen expliciete typecasting hoeven toe te passen.
             List<String> titels = data.get("Remarque");
-            titels.forEach(t -> System.out.println(t));
+            titels.forEach( System.out::println );
 
         } catch (FileNotFoundException e) {
             System.out.println("Bestand niet gevonden");
@@ -210,7 +218,7 @@ public class JsonBook {
         titels_2.add("Girlfriend in a Coma");
         data.put("Douglas Coupland", titels_2);
 
-        String filenname = "/Users/docent/Documents/OOP3-workspace/week4/src/jsonbook/remarque.json";
+        String filenname = DIR_NAME + "titels.json";
         // we openen een filewriter
         try (FileWriter file = new FileWriter(filenname)) {
             // Hier maken we een nieuwe GsonBuilder aan, die verantwoordelijk is voor de serialisatie

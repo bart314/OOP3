@@ -46,63 +46,63 @@ public class ChartDemo extends Application {
             try {
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                            ChartDemo.data1.getData().add(new XYChart.Data(2000, 120));
-                            ChartDemo.data2.getData().add(new XYChart.Data(2000, 2));
+                            chart.ChartDemo1.data1.getData().add(new XYChart.Data(2000, 120));
+                            chart.ChartDemo1.data2.getData().add(new XYChart.Data(2000, 2));
                         } );
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2001, 102));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2001,2));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2001, 102));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2001,2));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2002,98));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2002,3));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2002,98));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2002,3));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2003,85));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2003,1));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2003,85));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2003,1));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2004,95));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2004, 1));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2004,95));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2004, 1));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2005,96));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2005,2));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2005,96));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2005,2));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2006,98));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2006, 3));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2006,98));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2006, 3));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2007,123));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2007, 4));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2007,123));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2007, 4));
 
                 });
 
                 Thread.sleep(500);
                 Platform.runLater( () -> {
-                    ChartDemo.data1.getData().add(new XYChart.Data(2008,95));
-                    ChartDemo.data2.getData().add(new XYChart.Data(2008, 1));
+                    chart.ChartDemo1.data1.getData().add(new XYChart.Data(2008,95));
+                    chart.ChartDemo1.data2.getData().add(new XYChart.Data(2008, 1));
 
                 });
             } catch (InterruptedException e) {

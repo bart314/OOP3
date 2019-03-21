@@ -19,11 +19,8 @@ Ik maak hier gebruik van orj.json, wat niet de beste implementatie van JSON in J
 
     https://github.com/fabienrenaud/java-json-benchmark
 
-Voor de volledigheid heb ik hier ook een demo.json bestand aan toegevoegd. Het generieke formaat hiervan is
-
-    [
-        {"id":<id>, "artikel":<artikel_id>, "page":<page_num>, "quote":<long_text>},
-    ]
+De data haal ik van jsonplaceholder.typicode.com. Dit is sowieso een goeie site als je wat wilt doen met
+json en je hebt geen data tot je beschikking.
 
 Van belang is dat een JSONArray altijd één of meer JSONObject's bevat; daarom moet je eerst de array ophalen
 en dan daarbinnen de objecten. Ik itereer over deze objecten heen door middel van een Iterator en door middel
@@ -37,7 +34,7 @@ public class Demo {
 		String data = "";
 		// de data haal ik van mijn locale machine, maar je kunt natuurlijk ook eenvoudig het bijgevoegde
         // json-bestand lezen.
-		data = getData("http://localhost/~bart/demo.json");
+		data = getData("https://jsonplaceholder.typicode.com/todos");
 
 		// We parsen de gegeven data en maken daar dan een JSONArray van. Op dat moment zitten er allemaal
         // JSONObject's in die obj.
@@ -49,9 +46,8 @@ public class Demo {
 //		Iterator<JSONObject> itr = obj.iterator();
 //		while (itr.hasNext()) System.out.println(itr.next());
 
-        // Itereren met een lambda:
-        obj.forEach( o -> System.out.println(o));
-
+        // Itereren met een lambda (hier maak ik gebruik van een method-reference)
+        obj.forEach( System.out::println );
 	}
 
 	/*

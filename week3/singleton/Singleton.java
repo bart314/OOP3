@@ -9,11 +9,11 @@ klasse gemaakt is.
  */
 
 public class Singleton {
-    private static Singleton _instance;
+    private static Singleton instance;
     private String demoString;
 
     public static Singleton getInstance() {
-        // we kijken hier of het veld _instance al gevuld is. Als dat niet het geval is,
+        // we kijken hier of het veld instance al gevuld is. Als dat niet het geval is,
         // maken we hem hier aan. In beide gevallen wordt dit veld teruggegeven. Dit is
         // een techniek die bekend staat onder de term lazy instantiation.
         //
@@ -21,8 +21,8 @@ public class Singleton {
         //
         // Als dit object nooit wordt aangevraagd, is het ook niet nodig hem te creëren.
 
-        if (_instance==null) _instance = new Singleton();
-        return _instance;
+        if (instance ==null) instance = new Singleton();
+        return instance;
     }
 
     public String getString() {
@@ -33,19 +33,6 @@ public class Singleton {
     // gekoppeld, om eenvoudig duidelijk te kunnen maken dat het object dat door de methode
     // getInstance() wordt teruggegeven steeds hetzelfde is.
     private Singleton() {
-        this.demoString = getRandomString();
-    }
-
-    private String getRandomString() {
-        Random r = new Random();
-        String rv = "";
-
-        //loop for fill up 10 characters
-        for (int i=0; i<10; i++) {
-            char randomadd = (char)(r.nextInt(26) + 'A');
-            rv +=randomadd;
-        }
-
-        return rv;
+        this.demoString = Demo.getRandomString();
     }
 }

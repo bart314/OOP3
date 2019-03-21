@@ -7,6 +7,6 @@ public class XMLSerializer extends Serializer {
 	@Override
 	void serializeData() {
 		XStream xs = new XStream();
-		_sendableData = xs.toXML(_data);
+		sendableData = xs.toXML(data);
 	}
 }

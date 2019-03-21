@@ -19,14 +19,14 @@ logbestand.
  */
 
 public class ObserverImpl implements Observer {
-    private String _interest;
+    private String interest;
 
     /*
     Bij het aanmaken van een Observer meldt deze zichzelf aan bij de Observable (de StockGrabber in dit voorbeeld).
     In dit specifieke geval wordt ook een String meegegeven die aangeeft waarin het object geïnteresseerd is.
      */
     public ObserverImpl(Observable stockGrabber, String interest) {
-        this._interest = interest;
+        this.interest = interest;
         stockGrabber.register(this);
     }
 
@@ -34,7 +34,7 @@ public class ObserverImpl implements Observer {
     //welke data er wordt meegestuurd, wordt er al dan niet een waarde afgedrukt.
     @Override
     public void update(HashMap<String, Integer> values) {
-        Integer val = values.get(_interest);
-        if (val != null) System.out.println(_interest + ", waarde: " +val);
+        Integer val = values.get(interest);
+        if (val != null) System.out.println(interest + ", waarde: " +val);
     }
 }

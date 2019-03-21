@@ -21,8 +21,8 @@ van doen hebben.
 
 
 public class StockGrabber implements Observable, Runnable {
-    private ArrayList<Observer> observers = new ArrayList<>();
-    private HashMap<String, Integer> vals = new HashMap<>();
+    private List<Observer> observers = new ArrayList<>();
+    private Map<String, Integer> vals = new HashMap<>();
     private Random random = new Random();
 
     // Bij het aanmaken van deze Observable wordt de lijst van Observer's geïnitialiseerd.

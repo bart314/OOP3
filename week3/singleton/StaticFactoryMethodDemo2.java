@@ -1,6 +1,7 @@
 package singleton;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /*
@@ -12,10 +13,10 @@ import java.util.Random;
 */
 
 public class StaticFactoryMethodDemo2 {
-    private static ArrayList<StaticFactoryMethodDemo2> _instances;
+    private static List<StaticFactoryMethodDemo2> instances;
 
     static {
-        _instances = new ArrayList<>();
+        instances = new ArrayList<>();
     }
 
     private static int max_num = 10;
@@ -24,35 +25,22 @@ public class StaticFactoryMethodDemo2 {
     public static StaticFactoryMethodDemo2 getNextInstance() {
         StaticFactoryMethodDemo2 rv;
 
-        if (_instances.size() < max_num) {
+        if (instances.size() < max_num) {
             rv = new StaticFactoryMethodDemo2();
-            _instances.add(rv);
+            instances.add(rv);
         } else {
             Random r = new Random();
-            rv = _instances.get( r.nextInt(_instances.size()) );
+            rv = instances.get( r.nextInt(instances.size()) );
         }
 
         return rv;
     }
 
     private StaticFactoryMethodDemo2 () {
-        this.demoString = getRandomString();
+        this.demoString = Demo.getRandomString();
     }
 
     public String getDemoString() {
         return demoString;
-    }
-
-    private String getRandomString() {
-        Random r = new Random();
-        String rv = "";
-
-        //loop for fill up 10 characters
-        for (int i=0; i<10; i++) {
-            char randomadd = (char)(r.nextInt(26) + 'A');
-            rv +=randomadd;
-        }
-
-        return rv;
     }
 }

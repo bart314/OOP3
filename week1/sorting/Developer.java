@@ -1,8 +1,8 @@
 package sorting;
 
 public class Developer implements Comparable<Developer> {
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     Developer (String name, int age) {
         this.name = name;

@@ -7,36 +7,36 @@ interface Command {
 
 
 class goLeftCommand implements Command {
-	private Character _element;
+	private Character element;
 	
 	public goLeftCommand(final Character element) {
-		_element = element;
+		this.element = element;
 	}
 
 	@Override
 	public void execute() {
-		_element.goLeft();
+		element.goLeft();
 	}
 
 	public void undo() {
-		_element.goBack();
+		element.goRight();
 	}
 	
 }
 
 class goRightCommand implements Command {
-	private Character _element;
+	private Character element;
 	
 	public goRightCommand(final Character element) {
-		_element = element;
+		this.element = element;
 	}
 	@Override
 	public void execute() {
-		_element.goRight();
+		element.goRight();
 	}
 
 	public void undo() {
-		_element.goBack();
+		element.goLeft();
 	}
 	
 }

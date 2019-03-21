@@ -8,8 +8,8 @@ public class JSONSerializer extends Serializer {
 
 	@Override
 	void serializeData() {
-		JSONArray array = new JSONArray(Arrays.asList(_data));
-		_sendableData = array.toString();
+		JSONArray array = new JSONArray(Arrays.asList(data));
+		sendableData = array.toString();
 	}
 	
 

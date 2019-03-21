@@ -2,6 +2,7 @@ package iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 /*
@@ -11,18 +12,18 @@ wordt gegeven.
 
 
 public class NewStack<T> implements Iterable<T> {
-    private final ArrayList<T> _data = new ArrayList<>();
+    private final List<T> data = new ArrayList<>();
 
     public void push(T o) {
-        _data.add(o);
+        data.add(o);
     }
 
     public T pop() {
-        return _data.remove(_data.size() - 1);
+        return data.remove(data.size() - 1);
     }
 
     public boolean isEmpty() {
-        return _data.size() == 0;
+        return data.size() == 0;
     }
 
     @Override
@@ -38,14 +39,12 @@ public class NewStack<T> implements Iterable<T> {
         }
 
         public boolean hasNext() {
-            return this.cursor < NewStack.this._data.size();
+            return this.cursor < NewStack.this.data.size();
         }
 
         public T next() {
             if (this.hasNext()) {
-                int current = cursor;
-                cursor++;
-                return NewStack.this._data.get(current);
+                return NewStack.this.data.get(cursor++);
             }
             throw new NoSuchElementException();
         }

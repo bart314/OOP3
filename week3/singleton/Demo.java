@@ -1,6 +1,8 @@
 package singleton;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.IntStream;
 
 /*
@@ -41,7 +43,7 @@ public class Demo {
     dubbele waarden bevatten).
      */
     public static void demo2() {
-        HashSet<String> vals = new HashSet<>();
+        Set<String> vals = new HashSet<>();
         StaticFactoryMethodDemo2 foo;
 
         for (int i=0; i<30; i++) {
@@ -54,5 +56,16 @@ public class Demo {
         vals.stream().forEach( v -> System.out.println(v));
     }
 
+    public static String getRandomString() {
+        Random r = new Random();
+        String rv = "";
 
+        //loop for fill up 10 characters
+        for (int i = 0; i < 10; i++) {
+            char randomadd = (char) (r.nextInt(26) + 'A');
+            rv += randomadd;
+        }
+
+        return rv;
+    }
 }

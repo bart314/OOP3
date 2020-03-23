@@ -80,7 +80,7 @@ public class JsonBook {
         } catch (IOException e) {
             System.out.println("Er ging iets mis met lezen van het bestand...");
             e.printStackTrace();
-        } catch (ParseException e) {
+        }catch (ParseException e) {
             System.out.println("Er ging iets mis met het parseren van het bestand.");
             e.printStackTrace();
         }
@@ -203,7 +203,7 @@ public class JsonBook {
         // We maken eenzelfde soort Collection aan als in het lees-voorbeeld, waarbij de
         // key een String is en de value een List<String>.
         Map<String, List<String>> data = new HashMap<>();
-        List<String> titels_1 = new ArrayList<>();
+        List<Titels> titels_1 = new ArrayList<>();
 
         titels_1.add("Der Weg Zurück");
         titels_1.add("Im Westen nichts neues");

@@ -31,10 +31,7 @@ van een lambda.
 public class Demo {
 	public static void main(String[] args) throws IOException, ParseException {
 		JSONParser parser = new JSONParser();
-		String data = "";
-		// de data haal ik van mijn locale machine, maar je kunt natuurlijk ook eenvoudig het bijgevoegde
-        // json-bestand lezen.
-		data = getData("https://jsonplaceholder.typicode.com/todos");
+		String data = getData("https://jsonplaceholder.typicode.com/todos");
 
 		// We parsen de gegeven data en maken daar dan een JSONArray van. Op dat moment zitten er allemaal
         // JSONObject's in die obj.

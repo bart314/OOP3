@@ -2,6 +2,7 @@ package observer;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /*
@@ -33,7 +34,7 @@ public class ObserverImpl implements Observer {
     //Deze methode wordt vanuit de Observable waaraan deze Observer is gekoppeld aangeroepen. Afhankelijke van
     //welke data er wordt meegestuurd, wordt er al dan niet een waarde afgedrukt.
     @Override
-    public void update(HashMap<String, Integer> values) {
+    public void update(Map<String, Integer> values) {
         Integer val = values.get(interest);
         if (val != null) System.out.println(interest + ", waarde: " +val);
     }

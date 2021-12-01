@@ -2,9 +2,7 @@ package observer;
 
 //import com.sun.istack.internal.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 
 /*
 Deze klasse is de Observable waaraan alle Observers gekoppeld zijn. Hij heeft een interne lijst van alle objecten
@@ -21,7 +19,7 @@ van doen hebben.
 
 
 public class StockGrabber implements Observable, Runnable {
-    private List<Observer> observers = new ArrayList<>();
+    private List<Observer> observers;
     private Map<String, Integer> vals = new HashMap<>();
     private Random random = new Random();
 

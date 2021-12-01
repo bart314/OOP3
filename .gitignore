@@ -1,4 +1,8 @@
 .DS_Store
 .idea
+*.swp
+*.iml
 bin
 lib
+out/
+target/

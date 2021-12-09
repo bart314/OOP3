@@ -14,9 +14,9 @@ public class StockApp{
     public static void main(String[] args) {
         StockGrabber stockGrabber = new StockGrabber();
 
-        ObserverImpl appobs = new ObserverImpl(stockGrabber, "APPL");
-        ObserverImpl ibmobs = new ObserverImpl(stockGrabber, "IBM");
-        ObserverImpl teslaobs= new ObserverImpl(stockGrabber, "TESLA");
+        Observer appobs = new ObserverImpl(stockGrabber, "APPL");
+        Observer ibmobs = new ObserverImpl(stockGrabber, "IBM");
+        Observer teslaobs= new ObserverImpl(stockGrabber, "TESLA");
 
         Thread t1 = new Thread(stockGrabber);
         t1.start();

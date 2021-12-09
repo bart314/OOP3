@@ -36,6 +36,6 @@ public class ObserverImpl implements Observer {
     @Override
     public void update(Map<String, Integer> values) {
         Integer val = values.get(interest);
-        if (val != null) System.out.println(interest + ", waarde: " +val);
+        if (val != null) System.out.println(String.format("%s heeft waarde %d", interest, val));
     }
 }

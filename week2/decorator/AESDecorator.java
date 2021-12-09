@@ -2,7 +2,8 @@ package decorator;
 
 public class AESDecorator extends EncryptionDecorator {
 	private String AESDecrypted;
-	
+
+	//DEPENDENCY INJECTION
 	public AESDecorator(Encryptable txt) {
 		super(txt);
 		AESDecrypted = "\n\tAES Encrypted";

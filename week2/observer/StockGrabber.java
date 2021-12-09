@@ -4,6 +4,7 @@ package observer;
 
 import java.util.*;
 
+
 /*
 Deze klasse is de Observable waaraan alle Observers gekoppeld zijn. Hij heeft een interne lijst van alle objecten
 die geïnteresseerd zijn in de status-updates hiervan (die ArrayList<Observer> observers). Elke keer als dit object
@@ -25,7 +26,7 @@ public class StockGrabber implements Observable, Runnable {
 
     // Bij het aanmaken van deze Observable wordt de lijst van Observer's geïnitialiseerd.
     public StockGrabber(){
-        observers = new ArrayList<Observer>();
+        observers = new ArrayList<>();
     }
 
     // Deze methode wordt gebruikt om Observables aan de lijst toe te voegen.
@@ -42,15 +43,15 @@ public class StockGrabber implements Observable, Runnable {
     // Elke keer als er een nieuwe prijs wordt bepaald, wordt de methode notifyObservers aangeroepen.
     public void setPrice(String what, int howmuch) {
         vals.put(what, howmuch);
-        notifyObserver();
+        notifyObservers();
     }
 
     // Dit is de main gist van deze klasse. Elke Observer wordt op de hoogte gesteld van de wijzigingen in de status
     // van de lokale variabelen. De waarden van deze variabelen (de HashMap<String, Integer> vals) worden bij de
-    // update meegstuurd: dit is een implementatiekeuze (een ontwerpbeslissing). Je kunt er ook voor kiezen de
+    // update meegestuurd: dit is een implementatiekeuze (een ontwerpbeslissing). Je kunt er ook voor kiezen de
     // Observers zelf de data op te laten halen. Het voordeel van die implementatie is dat er minder data heen en
     // weer wordt gestuurd. Het voordeel van deze implementatie is dat je minder calls over en weer hebt...
-    public void notifyObserver() {
+    public void notifyObservers() {
         // TODO: omzetten naar Lambda...?
         for(Observer observer : observers) {
             observer.update(vals);
@@ -88,7 +89,4 @@ public class StockGrabber implements Observable, Runnable {
 
         return what;
     }
-
-
-
 }

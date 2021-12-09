@@ -1,0 +1,24 @@
+@startuml
+
+object stockGrabber
+
+object appObs {
+  Observable:stockGrabber
+  Interest: "Apple"
+}
+
+object ibmObs {
+  Observable:stockGrabber
+  Interest: "IBM"
+}
+
+object teslaObs{
+  Observable:stockGrabber
+  Interest: "Tesla"
+}
+
+stockGrabber --> appObs
+stockGrabber --> ibmObs
+stockGrabber --> teslaObs
+
+@enduml

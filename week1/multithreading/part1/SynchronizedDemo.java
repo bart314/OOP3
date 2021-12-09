@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
            |            |           |
            |            |           |
 
-    In het plaatje hierboven lezen zowel Tread 1 (op moment 1) als Thread 2 (op moment 2) de gedeelde resource.
+    In het plaatje hierboven lezen zowel Thread 1 (op moment 1) als Thread 2 (op moment 2) de gedeelde resource.
     Op moment 3 schrijft Thread 1 iets naar die resource terug, maar die update wordt overschreven doordat Thread 2 op
     moment 4 iets anders naar diezelfde resource schrijft. Deze situatie staat bekend onder de naam *lost update*.
 

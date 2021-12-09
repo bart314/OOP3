@@ -1,0 +1,26 @@
+@startuml
+interface Observable {
+ register(Observer o);
+ unregister(Observer o);
+ notifyObservers();
+}
+
+interface Observer {
+ update(Map<String, Integer> values);
+}
+
+class ObserverImpl {
+ interests:String
+}
+
+class StockGrabber {
+
+    observers:List<Observer>
+    values:Map<String, Integer>
+
+}
+
+ObserverImpl --|> Observer
+StockGrabber --|> Observable
+StockGrabber --> ObserverImpl
+@enduml

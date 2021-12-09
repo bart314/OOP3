@@ -50,14 +50,8 @@ public class MultiThreadingDemo {
 		@Override
 		public void run() {
 			for (int i=0; i<numberOfTimes; i++) {
-				printSpaces();
-				System.out.println("Running and printing "+printable);
-			}
-		}
-		
-		private void printSpaces() {
-			for (int i=0; i<spaces; i++) {
-				System.out.print(" ");
+				System.out.println(" ".repeat(spaces));
+				System.out.println(String.format("Running and printing %s.",printable));
 			}
 		}
 	}

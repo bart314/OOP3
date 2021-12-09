@@ -36,7 +36,7 @@ In de klasse hieronder staan vier methoden: twee om data te lezen en twee om dat
 
 public class JsonBook {
     // Verander de onderstaande constante in het correcte pad (waar de bestanden terecht moeten komen).
-    private static final String DIR_NAME = "/Users/bart/Dropbox/Hanze/thema2.3/oop3/week4/jsonbook/";
+    private static final String DIR_NAME = "week4/jsonbook/";
 
     public static void main(String[] args) {
         //read_demo();
@@ -203,7 +203,7 @@ public class JsonBook {
         // We maken eenzelfde soort Collection aan als in het lees-voorbeeld, waarbij de
         // key een String is en de value een List<String>.
         Map<String, List<String>> data = new HashMap<>();
-        List<Titels> titels_1 = new ArrayList<>();
+        List<String> titels_1 = new ArrayList<>();
 
         titels_1.add("Der Weg Zurück");
         titels_1.add("Im Westen nichts neues");

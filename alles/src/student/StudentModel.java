@@ -14,7 +14,7 @@ public class StudentModel implements Student {
 
     @Override
     public String toString() {
-        return String.format("student.Student %s <%s> (%d)", this.name, this.email, this.studentNumber);
+        return String.format("Student %s <%s> (%d)", this.name, this.email, this.studentNumber);
     }
 
     public String getName() {

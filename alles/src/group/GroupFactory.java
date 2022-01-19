@@ -21,7 +21,7 @@ public class GroupFactory {
         while(ctr + groupSize < students.size()) {
             List<Student> tmp = students.subList(ctr, ctr+groupSize);
             rv.add(new Group(this.service, ctr, tmp));
-            ctr++;
+            ctr += groupSize;
         }
 
         // add last slice of array

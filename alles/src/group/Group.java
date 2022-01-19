@@ -27,6 +27,7 @@ public class Group extends Observable implements Iterable<Student> {
         this.service = service;
         this.groupNumber = groupNumber;
         this.groepsleden = leden;
+        this.state = new SpecificationState();
     }
 
 
@@ -48,7 +49,7 @@ public class Group extends Observable implements Iterable<Student> {
 
     protected void setState(GroupState state) {
         this.state = state;
-        this.hasChanged();
+        this.setChanged();
         this.notifyObservers();
     }
 
@@ -87,12 +88,15 @@ public class Group extends Observable implements Iterable<Student> {
 
     @Override
     public String toString() {
-        String rv = "GROEP NUMMER " +this.groupNumber;
-        rv += "------\nGROEPSLEDEN";
+        StringBuilder builder = new StringBuilder();
+        builder.append("GROEP NUMMER");
+        builder.append(this.groupNumber);
+        builder.append("\n==================\n");
         for (Student st: groepsleden) {
-            rv += st.toString();
+            builder.append(st.toString());
+            builder.append("\n");
         }
-        rv += "Groepsstatus: " + this.state.toString();
-        return rv;
+        builder.append(String.format("Groepsstatus: %s ",  this.state.toString()));
+        return builder.toString();
     }
 }

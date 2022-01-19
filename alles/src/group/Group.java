@@ -23,6 +23,12 @@ public class Group extends Observable implements Iterable<Student> {
             groepsleden.add(this.service.getStudentById(id));
         }
     }
+    public Group(StudentService service, int groupNumber, List<Student> leden) {
+        this.service = service;
+        this.groupNumber = groupNumber;
+        this.groepsleden = leden;
+    }
+
 
     // STATE PATTERN
     public void getToWork() {

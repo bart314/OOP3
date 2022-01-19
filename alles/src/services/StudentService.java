@@ -3,6 +3,8 @@ package services;
 import student.Student;
 import student.StudentModel;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StudentService {
@@ -23,6 +25,16 @@ public class StudentService {
             if (st.getStudenNumber()==id) return st;
         }
         return null;
+    }
+
+    public List<Student> getAllStudents() {
+        return this.data;
+    }
+
+    public List<Student> getAllStudentsRandom() {
+        List<Student> tmp = new ArrayList<>(this.data);
+        Collections.shuffle(tmp);
+        return tmp;
     }
 
 

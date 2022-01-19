@@ -4,13 +4,12 @@ import student.CaffeinetedStudent;
 import student.EducatedStudent;
 import student.Student;
 import services.StudentService;
-import student.Studentable;
 
 import java.util.*;
 
 public class Group extends Observable implements Iterable<Student> {
 
-    private List<Studentable> groepsleden;
+    private List<Student> groepsleden;
     private final int groupNumber;
     private final StudentService service;
     private GroupState state;
@@ -84,7 +83,7 @@ public class Group extends Observable implements Iterable<Student> {
     public String toString() {
         String rv = "GROEP NUMMER " +this.groupNumber;
         rv += "------\nGROEPSLEDEN";
-        for (Studentable st: groepsleden) {
+        for (Student st: groepsleden) {
             rv += st.toString();
         }
         rv += "Groepsstatus: " + this.state.toString();

@@ -1,7 +1,7 @@
 package student;
 
-public class CaffeinetedStudent extends DecoratedStudent implements Studentable {
-    public CaffeinetedStudent(Studentable student) {
+public class CaffeinetedStudent extends DecoratedStudent implements Student {
+    public CaffeinetedStudent(Student student) {
         super(student);
     }
 

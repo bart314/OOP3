@@ -2,10 +2,10 @@ package student;
 
 import java.util.List;
 
-public class EducatedStudent extends DecoratedStudent implements Studentable {
+public class EducatedStudent extends DecoratedStudent implements Student {
     private final String subject;
 
-    public EducatedStudent(Studentable student, String subject) {
+    public EducatedStudent(Student student, String subject) {
         super(student);
         this.subject = subject;
     }

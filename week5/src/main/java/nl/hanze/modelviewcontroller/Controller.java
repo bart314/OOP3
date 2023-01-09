@@ -9,13 +9,8 @@ import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Controller implements Observer {
-    private Model model;
-
-    public Controller() {
-        this.model = new Model();
-        this.model.addObserver(this);
-    }
+public class Controller {
+    private Model model = new Model();
 
     @FXML
     private Label displayResults;
@@ -28,6 +23,9 @@ public class Controller implements Observer {
 
     @FXML
     private Label feedbackField;
+
+    @FXML
+    private TextField searchField;
 
     @FXML
     protected void onDocentButtonClick() {
@@ -49,21 +47,19 @@ public class Controller implements Observer {
 
     @FXML
     protected void onAddDocentButtonClick() {
-        displayResults.setText("nog niet geïmplementeerd");
-
+        feedbackField.setText("nog niet geïmplementeerd");
     }
 
     @FXML
     protected void onAddStudentButtonClick() {
-        String name = nameField.getText();
-        String code = codeField.getText();
-        this.model.addStudent(name, code);
+        // live demo 1
+        feedbackField.setText("nog niet geïmplementeerd");
     }
 
+    @FXML
+    protected void onSearchButtonClicked() {
+        // live demo 3
+        feedbackField.setText("nog niet geïmplementeerd");
 
-    @Override
-    public void update(Observable o, Object arg) {
-        feedbackField.setText((String)arg);
-        System.out.println("huih");
     }
 }

@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Observable;
+import java.util.stream.Collectors;
 
 public class Model extends Observable {
 
     protected static ArrayList<Displayable> studenten;
 
     public Model() {
-        this.studenten = new ArrayList<>(Arrays.asList(
+        Model.studenten = new ArrayList<>(Arrays.asList(
                 new Student(new SimplePerson("Karel", "406234")),
                 new Student(new SimplePerson("Hendrika", "246890")),
                 new Student(new SimplePerson("Omar", "231423")),
@@ -20,13 +21,17 @@ public class Model extends Observable {
     }
 
     public ArrayList<Displayable> getAllStudents() {
-        return this.studenten;
+        return Model.studenten;
     }
 
     public void addStudent(String name, String code) {
-        this.studenten.add(new Student(new SimplePerson(name, code)));
-        setChanged();
-        notifyObservers(String.format("Student %s (%s) toegevoegd", name, code));
+        // Live demo 1
+        // live demo 2
+    }
+
+    public ArrayList<Displayable> search(String needle) {
+        // live demo 3
+        return null;
     }
 }
 

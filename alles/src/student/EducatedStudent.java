@@ -2,7 +2,7 @@ package student;
 
 import java.util.List;
 
-public class EducatedStudent extends DecoratedStudent implements Student {
+public class EducatedStudent extends DecoratedStudent {
     private final String subject;
 
     public EducatedStudent(Student student, String subject) {
@@ -24,7 +24,7 @@ public class EducatedStudent extends DecoratedStudent implements Student {
 
     @Override
     public void getOut() {
-        System.out.println(String.format("student.Student maakt goede sier door zijn goede kennis van %s.", this.subject));
+        System.out.println(String.format("Student maakt goede sier door zijn goede kennis van %s.", this.subject));
         this.student.getOut();
     }
 }

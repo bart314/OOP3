@@ -5,20 +5,19 @@ De klassen in deze package demonstreren de werking van het Factory Pattern:
 
     https://nl.wikipedia.org/wiki/Factory_(ontwerppatroon)
 
-Er is een interface (of een abstracte klasse, maar in dit voorbeeld een interface) die aangeeft wat voor soort
-typen de factory zoal kan maken. De verschillende conrete Factories implementeren deze interface en geven desgewenst
+Er is een abstracte klasse (of een interface, maar in dit voorbeeld een abstracte klassse) die aangeeft wat voor soort
+typen de factory zoal kan maken. De verschillende concrete Factories extenden deze abstracte klasse en geven desgewenst
 een concrete implementatie van dit soort type.
 
 Het voordeel van dit patroon is dat er binnen de client (de Demo in dit voorbeeld) geen referentie bestaat naar een
 concrete implementatie van een specifiek type. De client delegeert dit concrete geval naar de factory, die in runtime
 veranderd kan worden.
 
-In dit specifieke voorbeeld zijn er verschillende soorten Document's (zie de betreffende interface). Met een document
-kun je verschillende dingen doen, maar bij verschillende concrete implementaties betekent dit iets anders (zie de
-methoden in de verschillende klassen). Voor deze client is dat echter niet van belang: zolang de concrete
-implementaties de juiste interface implementeren, kan ik hier eenvoudig (in runtime) switchen tussen
-verschillende soorten documenten.
-
+In dit specifieke voorbeeld zijn er verschillende soorten Document's (zie de betreffende abstracte klasse). Met een
+document kun je verschillende dingen doen, maar bij verschillende concrete implementaties betekent dit iets
+anders (zie de methoden in de verschillende klassen). Voor deze client is dat echter niet van belang:
+zolang de concrete implementaties de juiste interface implementeren, kan ik hier eenvoudig (in runtime)
+switchen tussen verschillende soorten documenten.
 */
 
 public class Demo {

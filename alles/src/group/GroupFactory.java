@@ -9,6 +9,8 @@ import java.util.List;
 public class GroupFactory {
     private StudentService service;
 
+
+    // dependecy injection
     public GroupFactory(StudentService service) {
         this.service = service;
     }

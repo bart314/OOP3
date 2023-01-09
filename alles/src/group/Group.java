@@ -32,7 +32,7 @@ public class Group extends Observable implements Iterable<Student> {
 
 
     // STATE PATTERN
-    public void getToWork() {
+    public void work() {
         System.out.println(String.format("Group %d is going to work.", this.groupNumber));
         this.state.work(this);
     }

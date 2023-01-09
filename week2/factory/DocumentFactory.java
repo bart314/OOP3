@@ -1,7 +1,7 @@
 package factory;
 
 /*
-Deze interface wordt door de concrete Factory's geïmplementeerd. Afhankelijk van het type Document dat
+Deze klasse wordt door de concrete Factory's extended. Afhankelijk van het type Document dat
 gevraagd wordt (door de Client, de Demo-klasse in dit voorbeeld) geven de concrete Factory's een ander
 soort Document terug.
 Om een wildgroei aan klassen in deze package te voorkomen, heb ik zowel de interface als de implementerende
@@ -13,13 +13,13 @@ naar de concrete Document-klassen; overals elders in de code wordt gebruik gemaa
 verantwoordelijk is voor het teruggeven van het juiste type document.
 */
 
-interface DocumentFactory {
+abstract class DocumentFactory {
 	
-	Document makeDocument();
+	abstract Document makeDocument();
 
 }
 
-class JSONFactory implements DocumentFactory {
+class JSONFactory extends DocumentFactory {
 
 	@Override
 	public Document makeDocument() {
@@ -30,7 +30,7 @@ class JSONFactory implements DocumentFactory {
 }
 
 
-class HTMLFactory implements DocumentFactory {
+class HTMLFactory extends DocumentFactory {
 
 	@Override
 	public Document makeDocument() {
@@ -41,7 +41,7 @@ class HTMLFactory implements DocumentFactory {
 }
 
 
-class TEXFactory implements DocumentFactory {
+class TEXFactory extends DocumentFactory {
 
 	@Override
 	public Document makeDocument() {

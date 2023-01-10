@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.stream.Collectors;
 
-public class Model extends Observable {
+public class Model  {
 
     protected static ArrayList<Displayable> studenten;
 
@@ -63,7 +63,7 @@ interface Displayable {
 
 }
 
-class Person implements Displayable {
+abstract class Person implements Displayable {
     final Displayable person;
 
     Person (Displayable p) {
